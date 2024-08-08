@@ -15,6 +15,7 @@
 
 .navigation__item {
   margin-left: 35px;
+  z-index: 10;
   transition: all 0.3s;
   &:hover {
     color: $yandex_yellow_color;
