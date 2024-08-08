@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useRef} from 'react';
 import * as classes from "./Transition.module.scss"
 
 interface TransitionProps {
@@ -9,13 +9,27 @@ interface TransitionProps {
 }
 
 const Transition: React.FC<TransitionProps> = ({mainString, subString, setHoverElem, keyWord}) => {
+    const hoverTimeout = useRef<NodeJS.Timeout | null>(null);
+    const leaveTimeout = useRef<NodeJS.Timeout | null>(null);
 
     function MouseHoverEnter() {
-        setTimeout(() => setHoverElem(keyWord), 100);
+        if (leaveTimeout.current) {
+            clearTimeout(leaveTimeout.current);
+            leaveTimeout.current = null;
+        }
+        hoverTimeout.current = setTimeout(() => {
+            setHoverElem(keyWord);
+        }, 750);
     }
 
     function MouseHoverLeave() {
-        setTimeout(() => setHoverElem("main"), 100);
+        if (hoverTimeout.current) {
+            clearTimeout(hoverTimeout.current);
+            hoverTimeout.current = null;
+        }
+        leaveTimeout.current = setTimeout(() => {
+            setHoverElem("main");
+        }, 750);
     }
 
     return (

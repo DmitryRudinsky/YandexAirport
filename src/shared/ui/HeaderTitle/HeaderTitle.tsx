@@ -1,32 +1,37 @@
-import React from 'react';
-import * as classes from "./header-title.module.scss"
+import React, {useEffect} from 'react';
+import * as classes from "./header-title.module.scss";
+import {useSpring, animated} from "react-spring";
 
-interface HeaderTitle {
+interface HeaderTitleProps {
     hoverElem: string;
 }
 
-const HeaderTitle: React.FC<HeaderTitle> = ({hoverElem}) => {
+const HeaderTitle: React.FC<HeaderTitleProps> = ({hoverElem}) => {
     const obj = {
         main: ["Я", "ндекс", "A", "ir"],
         departure: ["В", "ылет"],
         arrivals: ["П", "рилёт"],
         delay: ["З", "адержки"]
-    }
+    };
+
     const title = obj[hoverElem as keyof typeof obj];
 
-    if (title.length === 4) {
-        return (
-            <h1 className={classes.header__title}>
-                <span className={classes.span}>{title[0]}</span>{title[1]}<span className={classes.span}>{title[2]}</span>{title[3]}
-            </h1>
-        );
-    }else{
-        return (
-            <h1 className={classes.header__title}>
-                <span className={classes.span}>{title[0]}</span>{title[1]}
-            </h1>
-        );
-    }
+    const props = useSpring({
+        opacity: 1,
+        transform: 'translateY(0)',
+        from: {opacity: 0, transform: 'translateY(-40px)'},
+        reset: true,
+        config: {tension: 40, friction: 10}
+    });
+
+    return (
+        <animated.h1 style={props} className={classes.header__title}>
+            {title.map((char, index) => {
+                    return <span key={index} className={index % 2 === 0 ? classes.span : ""}>{char}</span>
+                }
+            )}
+        </animated.h1>
+    );
 };
 
 export default HeaderTitle;

@@ -1,1 +1,1 @@
-export {default as BackGroundVideo} from "./ui/backGroundVideo"
+export {default as BackGroundVideo} from "./ui/MainBackGroundVideo"

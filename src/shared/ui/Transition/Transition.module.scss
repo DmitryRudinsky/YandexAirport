@@ -2,7 +2,8 @@
 
 .transition{
   color: #ffffff;
-  margin-right: 100px;
+  padding-right: 100px;
+  cursor: pointer;
   &:hover{
     .transition__main__title{
       color: #ffcc00;
