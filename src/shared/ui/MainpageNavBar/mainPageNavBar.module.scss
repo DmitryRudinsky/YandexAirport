@@ -1,0 +1,50 @@
+@import "../../global_styles/vars.module";
+
+.navBar__inner{
+  display: flex;
+  justify-content: space-between;
+  padding-top: 30px;
+  color: #ffffff;
+}
+
+.navigation__list{
+  display: flex;
+  align-items: center;
+}
+
+.navigation__item{
+  margin-left: 35px;
+  transition: all 0.3s;
+  &:hover{
+    color: $yandex_yellow_color;
+  }
+  &:first-child{
+    border: 2px solid #ffffff;
+    padding: 4px 8px;
+    border-radius: 5px;
+    position: relative;
+    &:after{
+      transition: all 0.3s;
+      content: "";
+      background-image: url("../../assets/svgTicletLogo.svg");
+      width: 50px;
+      height: 50px;
+      position: absolute;
+      top: -5px;
+      left: 0;
+      opacity: 0;
+    }
+    &:hover{
+      border-color: $yandex_yellow_color;
+      padding-right: 70px;
+      &:after{
+        top: -5px;
+        left: 140px;
+        opacity: 1;
+      }
+    }
+  }
+  &:last-child{
+    margin-left: 100px;
+  }
+}

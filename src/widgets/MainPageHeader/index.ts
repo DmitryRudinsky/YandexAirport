@@ -1,0 +1,1 @@
+export {default as MainPageHeader} from "./ui/MainPageHeader"
