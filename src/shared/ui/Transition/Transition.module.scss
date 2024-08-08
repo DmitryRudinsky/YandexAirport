@@ -1,8 +1,7 @@
 @import "../../global_styles/vars.module";
 
-.transition{
-  color: #ffffff;
-  padding-right: 100px;
+.transition__horizontal,
+.transition__vertical{
   cursor: pointer;
   z-index: 10;
   &:hover{
@@ -16,7 +15,25 @@
   }
 }
 
-.transition__main{
+.transition__horizontal{
+  color: #ffffff;
+  padding-right: 100px;
+}
+
+.transition__vertical{
+  color: black;
+  margin-bottom: 25px;
+  &:last-child{
+    margin-bottom: 15px;
+  }
+}
+
+.transition__main__horizontal{
+  display: flex;
+  align-items: center;
+}
+
+.transition__main__vertical{
   display: flex;
   align-items: center;
 }
@@ -30,6 +47,7 @@
 .transition__sub__title{
   font-size: 16px;
   font-weight: 400;
+  max-width: 250px;
 }
 
 .line {

@@ -8,20 +8,40 @@
   margin-bottom: 250px;
 }
 
-.navigation__list {
+.navigation__list__horizontal {
   display: flex;
   align-items: center;
+}
+
+.navigation__list__vertical{
+  margin-bottom: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  .navigation__item {
+    font-size: 16px;
+    margin-left: 0;
+
+  }
+  .navigation__item__first {
+    border: 2px solid #000000;
+    font-size: 16px;
+    margin-left: 0;
+    width: 120px;
+  }
 }
 
 .navigation__item {
   margin-left: 35px;
   z-index: 10;
   transition: all 0.3s;
+  cursor: pointer;
   &:hover {
     color: $yandex_yellow_color;
   }
 }
 .navigation__item__first {
+  cursor: pointer;
   margin-left: 35px;
   transition: all 0.3s;
   border: 2px solid #ffffff;
@@ -53,6 +73,7 @@
 }
 
 .navigation__item__last {
+  cursor: pointer;
   transition: all 0.3s;
   border: 2px solid #ffffff;
   padding: 4px 8px;
