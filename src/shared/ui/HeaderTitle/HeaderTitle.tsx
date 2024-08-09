@@ -8,10 +8,10 @@ interface HeaderTitleProps {
 
 const HeaderTitle: React.FC<HeaderTitleProps> = ({hoverElem}) => {
     const obj = {
-        main: ["Я", "ндекс", "A", "ir"],
-        departure: ["В", "ылет"],
-        arrivals: ["П", "рилёт"],
-        delay: ["З", "адержки"]
+        main: ["Яндекс"," ", "Эйр"],
+        departure: ["Вылет"],
+        arrivals: ["Прилёт"],
+        delay: ["Задержки"]
     };
 
     const title = obj[hoverElem as keyof typeof obj];
@@ -26,10 +26,7 @@ const HeaderTitle: React.FC<HeaderTitleProps> = ({hoverElem}) => {
 
     return (
         <animated.h1 style={props} className={classes.header__title}>
-            {title.map((char, index) => {
-                    return <span key={index} className={index % 2 === 0 ? classes.span : ""}>{char}</span>
-                }
-            )}
+                <h1 className={classes.header__title}>{title}</h1>
         </animated.h1>
     );
 };
