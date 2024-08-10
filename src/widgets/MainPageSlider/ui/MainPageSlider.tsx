@@ -1,5 +1,4 @@
 import React from 'react';
-import Slider from "@/shared/ui/Slider/Slider";
 import * as globalClasses from "@/shared/global_styles/_global.module.scss"
 import SliderLayout from "@/features/SliderLayout/SliderLayout";
 import Img1 from "@/shared/assets/SliderImg/img1.jpg";
@@ -9,7 +8,7 @@ import Img3 from "@/shared/assets/SliderImg/img3.jpg";
 const MainPageSlider = () => {
     const __PAGEWIDTH__ = 1100;
     return (
-        <section style={{marginBottom: "100px"}} className="mainPage__slider">
+        <section style={{marginBottom: "200px"}} className="mainPage__slider">
             <div className={globalClasses.container}>
                 <SliderLayout __PAGEWIDTH__={__PAGEWIDTH__}>
                     <div>
