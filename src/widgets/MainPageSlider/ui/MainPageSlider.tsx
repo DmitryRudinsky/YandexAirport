@@ -1,48 +1,25 @@
 import React from 'react';
 import Slider from "@/shared/ui/Slider/Slider";
 import * as globalClasses from "@/shared/global_styles/_global.module.scss"
-import SliderLayout from "@/entities/SliderLayout/SliderLayout";
+import SliderLayout from "@/features/SliderLayout/SliderLayout";
+import Img1 from "@/shared/assets/SliderImg/img1.jpg";
+import Img2 from "@/shared/assets/SliderImg/img2.jpg";
+import Img3 from "@/shared/assets/SliderImg/img3.jpg";
 
 const MainPageSlider = () => {
-    const __PAGEWIDTH__ = 1250;
+    const __PAGEWIDTH__ = 1100;
     return (
-        <section className="mainPage__slider">
+        <section style={{marginBottom: "100px"}} className="mainPage__slider">
             <div className={globalClasses.container}>
                 <SliderLayout __PAGEWIDTH__={__PAGEWIDTH__}>
-                    <div style={{
-                        display: "flex",
-                        alignItems: "center",
-                        justifyContent: 'center',
-                        backgroundColor: "aqua"
-                    }}>JOPA
+                    <div>
+                        <img src={Img1} alt="slider photo"/>
                     </div>
-                    <div style={{
-                        display: "flex",
-                        alignItems: "center",
-                        justifyContent: 'center',
-                        backgroundColor: "blue"
-                    }}>JOPA
+                    <div>
+                        <img src={Img2} alt="slider photo"/>
                     </div>
-                    <div style={{
-                        display: "flex",
-                        alignItems: "center",
-                        justifyContent: 'center',
-                        backgroundColor: "red"
-                    }}>JOPA
-                    </div>
-                    <div style={{
-                        display: "flex",
-                        alignItems: "center",
-                        justifyContent: 'center',
-                        backgroundColor: "bisque"
-                    }}>JOPA
-                    </div>
-                    <div style={{
-                        display: "flex",
-                        alignItems: "center",
-                        justifyContent: 'center',
-                        backgroundColor: "crimson"
-                    }}>JOPA
+                    <div>
+                        <img src={Img3} alt="slider photo"/>
                     </div>
                 </SliderLayout>
             </div>

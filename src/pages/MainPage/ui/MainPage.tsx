@@ -8,6 +8,7 @@ const MainPage: React.FC = () => {
         <main>
             <MainPageHeader/>
             <MainPageSlider/>
+            <div>1</div>
         </main>
     );
 };

@@ -1,0 +1,19 @@
+@import "../../../shared/global_styles/vars.module";
+
+.slider__title__container{
+  padding-top: 50px;
+}
+
+.slider__title{
+  font-size: 32px;
+  margin-bottom: 10px;
+  transition: all 0.3s;
+  cursor: pointer;
+  &:hover{
+    color: $yandex_yellow_color;
+  }
+}
+
+.slider__title__act{
+  color: $yandex_yellow_color;
+}

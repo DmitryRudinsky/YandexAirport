@@ -1,0 +1,28 @@
+.slider__buttons {
+  display: flex;
+}
+
+.slider__buttons__elem {
+  margin-right: 30px;
+  border: none;
+  background-color: transparent;
+  position: relative;
+  &:last-child{
+    margin-right: 0;
+  }
+}
+
+.buttons__img {
+  width: 100px;
+  height: 55px;
+  transition: all 0.3s;
+  &:hover{
+    transform: translate(-4px, -4px);
+    box-shadow: #ffcc00 4px 4px;
+  }
+}
+
+.slider__buttons__elem.active .buttons__img {
+  transform: translate(-8px, -8px);
+  box-shadow: #ffcc00 8px 8px;
+}
