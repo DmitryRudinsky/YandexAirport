@@ -1,0 +1,1 @@
+export {default as MainPageSlider} from "@/widgets/MainPageSlider/ui/MainPageSlider"

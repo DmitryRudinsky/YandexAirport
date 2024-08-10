@@ -9,3 +9,15 @@
   src: url('../../shared/fonts/YandexSansText-Regular.woff2') format('woff2'),
   url('../../shared/fonts/YandexSansText-Regular.woff') format('woff');
 }
+
+@font-face {
+  font-family: 'YandexSansDisplay_Bold';
+  src: url('../../shared/fonts/YandexSansDisplay-Bold.woff2') format('woff2'),
+  url('../../shared/fonts/YandexSansDisplay-Bold.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'YandexSansDisplay_Regular';
+  src: url('../../shared/fonts/YandexSansDisplay-Regular.woff2') format('woff2'),
+  url('../../shared/fonts/YandexSansDisplay-Regular.woff') format('woff');
+}

@@ -1,0 +1,21 @@
+.mainContainer{
+  height: 500px;
+  width: 1250px;
+  display: flex;
+  margin-right: 50px;
+}
+
+.window{
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+.all__pages__container{
+  display: flex;
+  height: 100%;
+  transition: translate;
+  transition-property: transform;
+  transition-duration: 300ms;
+  transition-timing-function: ease-in-out;
+}

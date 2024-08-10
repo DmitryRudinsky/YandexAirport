@@ -1,0 +1,16 @@
+.slider__layout{
+  display: flex;
+}
+
+.slider__rightContent{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.slider__buttons{
+  display: flex;
+  button{
+    margin-right: 30px;
+  }
+}

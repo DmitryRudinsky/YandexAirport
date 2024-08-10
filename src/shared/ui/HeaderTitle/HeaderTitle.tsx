@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import * as classes from "./header-title.module.scss";
 import {useSpring, animated} from "react-spring";
 
@@ -8,7 +8,7 @@ interface HeaderTitleProps {
 
 const HeaderTitle: React.FC<HeaderTitleProps> = ({hoverElem}) => {
     const obj = {
-        main: ["Яндекс"," ", "Эйр"],
+        main: ["Яндекс Эйр"],
         departure: ["Вылет"],
         arrivals: ["Прилёт"],
         delay: ["Задержки"]
@@ -25,8 +25,8 @@ const HeaderTitle: React.FC<HeaderTitleProps> = ({hoverElem}) => {
     });
 
     return (
-        <animated.h1 style={props} className={classes.header__title}>
-                <h1 className={classes.header__title}>{title}</h1>
+        <animated.h1 style={props} className={`${classes.header__title}`}>
+            {title}
         </animated.h1>
     );
 };

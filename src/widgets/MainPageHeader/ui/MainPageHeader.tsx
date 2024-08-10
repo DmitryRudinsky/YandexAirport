@@ -6,21 +6,25 @@ import MainPageTransitions from "@/entities/MainPageTransitions/MainPageTransiti
 import BackgroundChanging from "@/features/BackgroundChanging/BackgroundChanging";
 import { Drawer } from "antd";
 import DrawerContent from "@/entities/DrawerContent/DrawerContent";
+import * as classes from "@/widgets/MainPageHeader/ui/MainPage.module.scss"
 
 
 const MainPageHeader: React.FC = () => {
     const [hoverElem, setHoverElem] = useState<string>("main");
     const [drawer, setDrawer] = useState<boolean>(false);
+
     return (
-        <header className="mainPage__header">
-            <BackgroundChanging hoverElem={hoverElem}/>
+        <header className={classes.header}>
+            <div className={classes.backgroundVideoWrapper}>
+                <BackgroundChanging hoverElem={hoverElem} />
+            </div>
             <div className={globalClasses.container}>
-                <MainPageNavigation setDrawer={setDrawer}/>
-                <HeaderTitle hoverElem={hoverElem}/>
-                <MainPageTransitions direction="horizontal" setHoverElem={setHoverElem}/>
+                <MainPageNavigation setDrawer={setDrawer} />
+                <HeaderTitle hoverElem={hoverElem} />
+                <MainPageTransitions direction="horizontal" setHoverElem={setHoverElem} />
             </div>
             <Drawer title="Меню" onClose={() => setDrawer(false)} open={drawer}>
-                <DrawerContent/>
+                <DrawerContent />
             </Drawer>
         </header>
     );
