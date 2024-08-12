@@ -1,0 +1,1 @@
+export {default as DeparturePage} from "./ui/DeparturePage"

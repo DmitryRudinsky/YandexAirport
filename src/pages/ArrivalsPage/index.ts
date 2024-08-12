@@ -1,0 +1,1 @@
+export {default as ArrivalsPage} from "./ui/ArrivalsPage"
