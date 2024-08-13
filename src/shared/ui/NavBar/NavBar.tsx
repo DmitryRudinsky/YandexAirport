@@ -1,5 +1,5 @@
 import React from 'react';
-import * as classes from "@/shared/ui/MainpageNavBar/mainPageNavBar.module.scss";
+import * as classes from "@/shared/ui/NavBar/NavBar.module.scss";
 
 type Direction = "horizontal" | "vertical"
 
@@ -11,7 +11,7 @@ interface MainPageNavBarProps {
     direction: Direction
 }
 
-const MainPageNavBar: React.FC<MainPageNavBarProps> = ({content, needFirst, needLast, setDrawer, direction}) => {
+const NavBar: React.FC<MainPageNavBarProps> = ({content, needFirst, needLast, setDrawer, direction}) => {
     return (
         <nav>
             <ul className={direction === "horizontal" ? classes.navigation__list__horizontal : classes.navigation__list__vertical}>
@@ -27,4 +27,4 @@ const MainPageNavBar: React.FC<MainPageNavBarProps> = ({content, needFirst, need
     );
 };
 
-export default MainPageNavBar;
+export default NavBar;

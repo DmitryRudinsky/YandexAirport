@@ -9,6 +9,7 @@ import React from "react";
 import {DeparturePage} from "@/pages/DeparturePage";
 import {ArrivalsPage} from "@/pages/ArrivalsPage";
 import {DelayPage} from "@/pages/DelayPage";
+import {QueryClient, QueryClientProvider} from "react-query";
 
 const root = document.getElementById("root");
 
@@ -35,9 +36,13 @@ const router = createBrowserRouter([
     },
 ]);
 
+const queryClient = new QueryClient();
+
 const container = createRoot(root);
 container.render(
-    <React.StrictMode>
-        <RouterProvider router={router}/>
-    </React.StrictMode>
+    <QueryClientProvider client={queryClient}>
+        <React.StrictMode>
+            <RouterProvider router={router}/>
+        </React.StrictMode>
+    </QueryClientProvider>
 )
