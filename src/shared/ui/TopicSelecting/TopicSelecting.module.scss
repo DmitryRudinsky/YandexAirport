@@ -1,0 +1,19 @@
+.topic__selecting{
+  margin-bottom: 100px;
+}
+
+.list{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.elem{
+  font-size: calc(32 * 1px + (90 - 32) * (100vw - 320 * 1px)/ (2880 - 320));
+  margin-right: 70px;
+  margin-bottom: 70px;
+  font-weight: 600;
+  transition: all 0.3s;
+  &:hover{
+    color: #ffcc00;
+  }
+}
