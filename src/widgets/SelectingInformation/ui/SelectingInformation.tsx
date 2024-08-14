@@ -3,6 +3,7 @@ import * as globalClasses from "@/shared/global_styles/_global.module.scss";
 import * as classes from "./SelectingInformation.module.scss"
 import TopicNames from "@/shared/ui/TopicNames/TopicNames";
 import TopicSelecting from "@/shared/ui/TopicSelecting/TopicSelecting";
+import Input from "@/entities/Input/Input";
 
 type HeaderType = "Вылет" | "Прилёт" | "Задержки"
 
@@ -17,6 +18,7 @@ const SelectingInformation: React.FC<SelectingInformationProps> = ({header}) => 
                 <h4 className={classes.h4__title}>{header}</h4>
                 <TopicNames header={header}/>
                 <TopicSelecting header={header}/>
+                <Input/>
             </div>
         </section>
     );

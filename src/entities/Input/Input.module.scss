@@ -1,0 +1,75 @@
+.searchBar {
+  display: flex;
+  align-items: center;
+  border-bottom: 3px solid black;
+  padding: 10px 0;
+  transition: all 0.3s ease-in-out;
+  &__active{
+    border-bottom: 3px solid #ffcc00;
+  }
+}
+.searchBar__input {
+  flex-grow: 1;
+  border: none;
+  outline: none;
+  font-size: 20px;
+  transition: all 0.3s;
+}
+
+.searchBar input::placeholder {
+  transition: color 0.3s ease;
+}
+.searchBar input:hover::placeholder {
+  color: #ffcc00;
+}
+
+.searchBar .options {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  color: #f5a623;
+  font-size: 14px;
+}
+.options span {
+  cursor: pointer;
+}
+.options span:hover {
+  text-decoration: underline;
+}
+
+
+.cancel{
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  font-size: 20px;
+  transition: all 0.3s;
+  &:hover{
+    color: #ffcc00;
+  }
+}
+
+.find{
+  cursor: pointer;
+  margin-left: 20px;
+  background: transparent;
+  border: none;
+  font-size: 20px;
+  color: #ffcc00;
+}
+
+.dropCont{
+  display: flex;
+}
+
+.dropdown{
+  margin-left: 20px;
+}
+
+.space{
+  transition: all 0.3s;
+  cursor: pointer;
+  &:hover{
+    color: #ffcc00;
+  }
+}

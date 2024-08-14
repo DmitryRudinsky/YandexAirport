@@ -23,7 +23,7 @@ const TopicSelecting: React.FC<TopicSelectingProps> = ({header}) => {
                     <h1 className={classes.elem}>Выбор рейса прилёта</h1>
                     :
                     <ul className={classes.list}>
-                        <li className={classes.elem}>{elems[0]}</li>
+                        <li className={`${classes.elem} ${classes.elem__active}`}>{elems[0]}</li>
                         <li className={classes.elem}>{elems[1]}</li>
                         <li className={classes.elem}>{elems[2]}</li>
                         <li className={classes.elem}>Пассажирам с ОВЗ</li>
