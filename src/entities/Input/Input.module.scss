@@ -61,15 +61,3 @@
 .dropCont{
   display: flex;
 }
-
-.dropdown{
-  margin-left: 20px;
-}
-
-.space{
-  transition: all 0.3s;
-  cursor: pointer;
-  &:hover{
-    color: #ffcc00;
-  }
-}
