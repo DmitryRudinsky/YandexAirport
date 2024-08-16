@@ -1,12 +1,10 @@
-.dropdown{
+.dropdown {
   margin-left: 20px;
 }
 
-.space{
-  font-size: 20px;
+.space {
+  font-size: 24px;
   transition: all 0.3s;
   cursor: pointer;
-  &:hover{
-    color: #ffcc00;
-  }
+  color: #ffcc00;
 }

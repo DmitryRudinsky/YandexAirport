@@ -9,16 +9,17 @@ type HeaderType = "Вылет" | "Прилёт" | "Задержки"
 
 interface SelectingInformationProps{
     header: HeaderType;
+    setCurrentDate: React.Dispatch<React.SetStateAction<string>>;
 }
 
-const SelectingInformation: React.FC<SelectingInformationProps> = ({header}) => {
+const SelectingInformation: React.FC<SelectingInformationProps> = ({header, setCurrentDate}) => {
     return (
         <section>
             <div className={globalClasses.container}>
                 <h4 className={classes.h4__title}>{header}</h4>
                 <TopicNames header={header}/>
                 <TopicSelecting header={header}/>
-                <Input/>
+                <Input setCurrentDate={setCurrentDate}/>
             </div>
         </section>
     );

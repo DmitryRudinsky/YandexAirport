@@ -5,11 +5,13 @@ import DropDownTimes from "@/shared/ui/DropDownTimes/DropDownTimes";
 import DropDownDays from "@/shared/ui/DropDownDays/DropDownDays";
 import {getDates} from "@/shared/functions/getDate";
 
+interface InputProps{
+    setCurrentDate: React.Dispatch<React.SetStateAction<string>>;
+}
 
-const Input: React.FC = () => {
+const Input: React.FC<InputProps> = ({setCurrentDate}) => {
 
-    const [dateFormat1, dateFormat2, dateFormatYesterday, dateFormatTomorrow] = getDates();
-
+    const [dateFormat1, dateFormat2, dateFormatYesterday, dateFormatTomorrow, dateFormatYesterdayFull, dateFormatTomorrowFull] = getDates();
     const [active, setActive] = useState<boolean>(false);
     const [timeName, setTimeName] = useState<string>("Любое время");
     const [daysName, setDaysName] = useState<string>(dateFormat2);
@@ -43,7 +45,7 @@ const Input: React.FC = () => {
                         ?
                         <animated.div style={props}>
                             <div className={classes.dropCont}>
-                                <DropDownDays dateFormat2={dateFormat2} setDaysName={setDaysName} dateFormatYesterday={dateFormatYesterday} dateFormatTomorrow={dateFormatTomorrow} daysName={daysName}/>
+                                <DropDownDays dateFormat1={dateFormat1} dateFormatTomorrowFull={dateFormatTomorrowFull} dateFormatYesterdayFull={dateFormatYesterdayFull} setCurrentDate={setCurrentDate} dateFormat2={dateFormat2} setDaysName={setDaysName} dateFormatYesterday={dateFormatYesterday} dateFormatTomorrow={dateFormatTomorrow} daysName={daysName}/>
                                 <DropDownTimes setTimeName={setTimeName} timeName={timeName}/>
                             </div>
                         </animated.div>

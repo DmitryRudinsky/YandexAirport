@@ -7,7 +7,7 @@ const DelayPage: React.FC = () => {
     return (
         <main className={classes.delayPage}>
             <Header/>
-            <SelectingInformation header={"Задержки"}/>
+            {/*<SelectingInformation header={"Задержки"}/>*/}
         </main>
     );
 };

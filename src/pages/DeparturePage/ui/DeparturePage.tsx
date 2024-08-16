@@ -7,7 +7,7 @@ const DeparturePage: React.FC = () => {
     return (
         <main className={classes.departurePage}>
             <Header/>
-            <SelectingInformation header={"Вылет"}/>
+            {/*<SelectingInformation header={"Вылет"}/>*/}
         </main>
     );
 };

@@ -5,19 +5,27 @@ import {DownOutlined} from "@ant-design/icons";
 
 
 interface DropDownProps {
+    dateFormat1: string;
     daysName: string;
     dateFormat2: string;
     dateFormatYesterday: string;
     dateFormatTomorrow: string;
     setDaysName: React.Dispatch<React.SetStateAction<string>>;
+    setCurrentDate: React.Dispatch<React.SetStateAction<string>>;
+    dateFormatYesterdayFull: string;
+    dateFormatTomorrowFull: string;
 }
 
 const DropDownDays: React.FC<DropDownProps> = ({
+                                                   dateFormat1,
                                                    dateFormat2,
                                                    setDaysName,
                                                    daysName,
                                                    dateFormatYesterday,
-                                                   dateFormatTomorrow
+                                                   dateFormatTomorrow,
+                                                   setCurrentDate,
+                                                   dateFormatYesterdayFull,
+                                                   dateFormatTomorrowFull,
                                                }) => {
 
     const items: ({ label: string; key: string })[] = [
@@ -37,6 +45,10 @@ const DropDownDays: React.FC<DropDownProps> = ({
 
     const onClick: MenuProps['onClick'] = ({key}) => {
         setDaysName(items[Number(key)].label);
+        if(key === "0") setCurrentDate(dateFormatYesterdayFull);
+        else if(key === "1") setCurrentDate(dateFormat1);
+        else if(key === "2") setCurrentDate(dateFormatTomorrowFull);
+        // refetch();
     };
 
     return (
