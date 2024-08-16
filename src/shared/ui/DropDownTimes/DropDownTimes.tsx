@@ -7,9 +7,10 @@ import {DownOutlined} from "@ant-design/icons";
 interface DropDownProps{
     timeName: string;
     setTimeName: React.Dispatch<React.SetStateAction<string>>;
+    setCurrentInterval: React.Dispatch<React.SetStateAction<string[]>>;
 }
 
-const DropDownTimes: React.FC<DropDownProps> = ({timeName, setTimeName}) => {
+const DropDownTimes: React.FC<DropDownProps> = ({timeName, setTimeName, setCurrentInterval}) => {
 
     const items: ({ label: string; key: string })[] = [
         {
@@ -63,6 +64,8 @@ const DropDownTimes: React.FC<DropDownProps> = ({timeName, setTimeName}) => {
     ];
 
     const onClick: MenuProps['onClick'] = ({key}) => {
+        const inters = items[Number(key)].label.split(" – ").map(time => time.trim());
+        setCurrentInterval([inters[0], inters[1]]);
         setTimeName(items[Number(key)].label);
     };
 

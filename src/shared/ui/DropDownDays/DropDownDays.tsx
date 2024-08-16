@@ -48,7 +48,6 @@ const DropDownDays: React.FC<DropDownProps> = ({
         if(key === "0") setCurrentDate(dateFormatYesterdayFull);
         else if(key === "1") setCurrentDate(dateFormat1);
         else if(key === "2") setCurrentDate(dateFormatTomorrowFull);
-        // refetch();
     };
 
     return (

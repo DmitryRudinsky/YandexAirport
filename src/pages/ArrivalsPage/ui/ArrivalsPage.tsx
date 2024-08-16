@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import {useQuery} from "react-query";
-import {getArr} from "@/pages/ArrivalsPage/func/getArr";
+import { getArrivalInfo} from "@/pages/ArrivalsPage/func/getArrivalInfo";
 import {Spin} from "antd";
 import * as classes from "./ArrivalsPage.module.scss";
 import {Header} from "@/widgets/Header";
@@ -10,24 +10,29 @@ import {getTimeInterval} from "@/shared/functions/getTimeInterval";
 
 
 const ArrivalsPage: React.FC = () => {
-    const [today] = getDates();
-    const [startInterval, endInterval] = getTimeInterval();
 
+
+    const [today, todayFormat] = getDates();
+    const [startInterval, endInterval] = getTimeInterval();
+    const [daysName, setDaysName] = useState<string>(todayFormat);
     const [currentDate, setCurrentDate] = useState<string>(today);
+    const [timeName, setTimeName] = useState<string>(`${startInterval} - ${endInterval}`);
     const [currentInterval, setCurrentInterval] = useState<string[]>([startInterval, endInterval]);
     const [isRefetching, setIsRefetching] = useState<boolean>(false);
+
+    console.log(currentDate, currentInterval);
 
     const {
         data: arrTableData,
         isLoading: arrTableIsLoading,
         isError: arrTableIsError,
         refetch
-    } = useQuery("arrTableData", () => getArr(currentDate, currentInterval));
+    } = useQuery("arrTableData", () => getArrivalInfo(currentDate, currentInterval));
 
     useEffect(() => {
-        setIsRefetching(true);  // Устанавливаем состояние "загрузка"
-        refetch().then(() => setIsRefetching(false)); // После завершения refetch снимаем состояние "загрузка"
-    }, [currentDate, refetch]);
+        setIsRefetching(true);
+        refetch().then(() => setIsRefetching(false));
+    }, [currentDate, currentInterval, refetch]);
 
 
     console.log(arrTableData);
@@ -38,7 +43,14 @@ const ArrivalsPage: React.FC = () => {
         return (
             <main className={classes.arrivalsPage}>
                 <Header/>
-                <SelectingInformation header={"Прилёт"} setCurrentDate={setCurrentDate}/>
+                <SelectingInformation header={"Прилёт"}
+                                      setCurrentDate={setCurrentDate}
+                                      setCurrentInterval={setCurrentInterval}
+                                      daysName={daysName}
+                                      setDaysName={setDaysName}
+                                      timeName={timeName}
+                                      setTimeName={setTimeName}
+                />
             </main>
         );
     }

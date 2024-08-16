@@ -7,19 +7,39 @@ import Input from "@/entities/Input/Input";
 
 type HeaderType = "Вылет" | "Прилёт" | "Задержки"
 
-interface SelectingInformationProps{
+interface SelectingInformationProps {
     header: HeaderType;
     setCurrentDate: React.Dispatch<React.SetStateAction<string>>;
+    daysName: string;
+    setDaysName: React.Dispatch<React.SetStateAction<string>>;
+    setCurrentInterval: React.Dispatch<React.SetStateAction<string[]>>;
+    timeName: string;
+    setTimeName: React.Dispatch<React.SetStateAction<string>>;
 }
 
-const SelectingInformation: React.FC<SelectingInformationProps> = ({header, setCurrentDate}) => {
+const SelectingInformation: React.FC<SelectingInformationProps> = ({
+                                                                       header,
+                                                                       setCurrentDate,
+                                                                       setDaysName,
+                                                                       daysName,
+                                                                       setCurrentInterval,
+                                                                       timeName,
+                                                                       setTimeName
+                                                                   }) => {
     return (
         <section>
             <div className={globalClasses.container}>
                 <h4 className={classes.h4__title}>{header}</h4>
                 <TopicNames header={header}/>
                 <TopicSelecting header={header}/>
-                <Input setCurrentDate={setCurrentDate}/>
+                <Input
+                    setCurrentInterval={setCurrentInterval}
+                    setCurrentDate={setCurrentDate}
+                    daysName={daysName}
+                    setDaysName={setDaysName}
+                    timeName={timeName}
+                    setTimeName={setTimeName}
+                />
             </div>
         </section>
     );
