@@ -6,9 +6,10 @@ import {DepartureInfo, axiosRequest} from "@/shared/interfaces/DepartureInterfac
 
 interface ArrivalTablesProps {
     departureTableDataInfo: axiosRequest;
+    input: string;
 }
 
-const DepartureTables: React.FC<ArrivalTablesProps> = ({departureTableDataInfo}) => {
+const DepartureTables: React.FC<ArrivalTablesProps> = ({departureTableDataInfo, input}) => {
     const arrivalData: DepartureInfo[] = departureTableDataInfo.items;
 
     return (
@@ -24,9 +25,12 @@ const DepartureTables: React.FC<ArrivalTablesProps> = ({departureTableDataInfo})
                     else time = data.t_st.split("T")[1].slice(0, 5);
                     const city = data.mar2.city;
                     const gate_id = data.gate_id;
-                    return (
-                        <TableCell gate_id={gate_id} city={city} time={time} status={status} term={term} code={code} flt={flt} key={index}/>
-                    )
+                    if (input === "" || flt.includes(input) || city.includes(input)) {
+                        return (
+                            <TableCell gate_id={gate_id} city={city} time={time} status={status} term={term} code={code}
+                                       flt={flt} key={index}/>
+                        )
+                    }
                 })}
             </div>
         </section>

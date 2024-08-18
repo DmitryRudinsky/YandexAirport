@@ -6,9 +6,10 @@ import {TransferInfo, axiosRequest} from "@/shared/interfaces/TransferInterface"
 
 interface ArrivalTablesProps {
     transferTableDataInfo: axiosRequest;
+    input: string;
 }
 
-const TransferTables: React.FC<ArrivalTablesProps> = ({transferTableDataInfo}) => {
+const TransferTables: React.FC<ArrivalTablesProps> = ({transferTableDataInfo, input}) => {
     const arrivalData: TransferInfo[] = transferTableDataInfo.items;
 
     return (
@@ -23,9 +24,12 @@ const TransferTables: React.FC<ArrivalTablesProps> = ({transferTableDataInfo}) =
                     if(data.t_at !== null) time = data.t_at.split("T")[1].slice(0, 5);
                     else time = data.t_st.split("T")[1].slice(0, 5);
                     const city = data.mar2.city !== "Москва" ? data.mar2.city : data.mar1.city;
-                    return (
-                        <TableCell gate_id={null} city={city} time={time} status={status} term={term} code={code} flt={flt} key={index}/>
-                    )
+                    if (input === "" || flt.includes(input) || city.includes(input)) {
+                        return (
+                            <TableCell gate_id={null} city={city} time={time} status={status} term={term} code={code}
+                                       flt={flt} key={index}/>
+                        )
+                    }
                 })}
             </div>
         </section>

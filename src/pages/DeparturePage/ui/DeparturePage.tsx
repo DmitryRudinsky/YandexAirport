@@ -26,6 +26,8 @@ const DeparturePage: React.FC = () => {
     const [timeName, setTimeName] = useState<string>(`${startInterval} - ${endInterval}`);
     const [currentInterval, setCurrentInterval] = useState<string[]>([startInterval, endInterval]);
     const [isRefetching, setIsRefetching] = useState<boolean>(false);
+    const [input, setInput] = useState<string>("");
+
 
     useEffect(() => {
         setIsRefetching(true);
@@ -47,8 +49,9 @@ const DeparturePage: React.FC = () => {
                                       setDaysName={setDaysName}
                                       timeName={timeName}
                                       setTimeName={setTimeName}
+                                      setInput={setInput}
                 />
-                <DepartureTables departureTableDataInfo={departureTableDataInfo}/>
+                <DepartureTables input={input} departureTableDataInfo={departureTableDataInfo}/>
                 <Footer/>
             </main>
         );

@@ -21,6 +21,7 @@ const ArrivalsPage: React.FC = () => {
     const [timeName, setTimeName] = useState<string>(`${startInterval} - ${endInterval}`);
     const [currentInterval, setCurrentInterval] = useState<string[]>([startInterval, endInterval]);
     const [isRefetching, setIsRefetching] = useState<boolean>(false);
+    const [input, setInput] = useState<string>("");
 
     const {
         data: arrTableDataInfo,
@@ -49,8 +50,10 @@ const ArrivalsPage: React.FC = () => {
                                       setDaysName={setDaysName}
                                       timeName={timeName}
                                       setTimeName={setTimeName}
+                                      setInput={setInput}
                 />
                 <ArrivalTables
+                    input={input}
                     arrTableDataInfo={arrTableDataInfo}
                 />
                 <Footer/>

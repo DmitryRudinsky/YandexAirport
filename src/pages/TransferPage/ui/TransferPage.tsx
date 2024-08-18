@@ -19,6 +19,8 @@ const TransferPage: React.FC = () => {
     const [timeName, setTimeName] = useState<string>(`${startInterval} - ${endInterval}`);
     const [currentInterval, setCurrentInterval] = useState<string[]>([startInterval, endInterval]);
     const [isRefetching, setIsRefetching] = useState<boolean>(false);
+    const [input, setInput] = useState<string>("");
+
 
 
     const {
@@ -43,8 +45,9 @@ const TransferPage: React.FC = () => {
                 <Header/>
                 <SelectingInformation timeName={timeName} setTimeName={setTimeName} daysName={daysName}
                                       setDaysName={setDaysName} setCurrentDate={setCurrentDate}
-                                      setCurrentInterval={setCurrentInterval} header={"Пересадка"}/>
-                <TransferTables transferTableDataInfo={transferTableDataInfo}/>
+                                      setCurrentInterval={setCurrentInterval} header={"Пересадка"}
+                                      setInput={setInput}/>
+                <TransferTables input={input} transferTableDataInfo={transferTableDataInfo}/>
                 <Footer/>
             </main>
         );

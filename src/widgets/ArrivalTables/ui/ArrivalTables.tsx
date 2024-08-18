@@ -6,9 +6,10 @@ import {ArrivalInfo, axiosRequest} from "@/shared/interfaces/ArrivalInterface";
 
 interface ArrivalTablesProps {
     arrTableDataInfo: axiosRequest;
+    input: string;
 }
 
-const ArrivalTables: React.FC<ArrivalTablesProps> = ({arrTableDataInfo}) => {
+const ArrivalTables: React.FC<ArrivalTablesProps> = ({arrTableDataInfo, input}) => {
     const arrivalData: ArrivalInfo[] = arrTableDataInfo.items;
     console.log(arrivalData);
 
@@ -21,12 +22,15 @@ const ArrivalTables: React.FC<ArrivalTablesProps> = ({arrTableDataInfo}) => {
                     const term = data.term;
                     const status = data.vip_status_rus;
                     let time;
-                    if(data.t_at !== null) time = data.t_at.split("T")[1].slice(0, 5);
+                    if (data.t_at !== null) time = data.t_at.split("T")[1].slice(0, 5);
                     else time = data.t_st.split("T")[1].slice(0, 5);
                     const city = data.mar1.city;
-                    return (
-                        <TableCell gate_id={null} city={city} time={time} status={status} term={term} code={code} flt={flt} key={index}/>
-                    )
+                    if (input === "" || flt.includes(input) || city.includes(input)) {
+                        return (
+                            <TableCell gate_id={null} city={city} time={time} status={status} term={term} code={code}
+                                       flt={flt} key={index}/>
+                        )
+                    }
                 })}
             </div>
         </section>

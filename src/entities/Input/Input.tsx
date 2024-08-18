@@ -12,6 +12,7 @@ interface InputProps {
     setCurrentInterval: React.Dispatch<React.SetStateAction<string[]>>;
     timeName: string;
     setTimeName: React.Dispatch<React.SetStateAction<string>>;
+    setInput: React.Dispatch<React.SetStateAction<string>>;
 }
 
 const Input: React.FC<InputProps> = ({
@@ -20,7 +21,8 @@ const Input: React.FC<InputProps> = ({
                                          daysName,
                                          setCurrentInterval,
                                          timeName,
-                                         setTimeName
+                                         setTimeName,
+                                         setInput
                                      }) => {
 
     const [dateFormat1, dateFormat2, dateFormatYesterday, dateFormatTomorrow, dateFormatYesterdayFull, dateFormatTomorrowFull] = getDates();
@@ -47,7 +49,7 @@ const Input: React.FC<InputProps> = ({
 
     return (
         <div className={`${classes.searchBar} ${active ? classes.searchBar__active : ""}`}>
-            <input className={`${classes.searchBar__input}`} onClick={setActiveHandle} type="text"
+            <input onChange={(e) => setInput(e.target.value)} className={`${classes.searchBar__input}`} onClick={setActiveHandle} type="text"
                    placeholder="Поиск по номеру рейса, городу и авиакомпании"/>
             <div className={classes.options}>
                 {

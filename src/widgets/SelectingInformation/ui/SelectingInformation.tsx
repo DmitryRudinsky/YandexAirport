@@ -15,6 +15,7 @@ interface SelectingInformationProps {
     setCurrentInterval: React.Dispatch<React.SetStateAction<string[]>>;
     timeName: string;
     setTimeName: React.Dispatch<React.SetStateAction<string>>;
+    setInput: React.Dispatch<React.SetStateAction<string>>;
 }
 
 const SelectingInformation: React.FC<SelectingInformationProps> = ({
@@ -24,7 +25,8 @@ const SelectingInformation: React.FC<SelectingInformationProps> = ({
                                                                        daysName,
                                                                        setCurrentInterval,
                                                                        timeName,
-                                                                       setTimeName
+                                                                       setTimeName,
+                                                                       setInput
                                                                    }) => {
     return (
         <section className={classes.selection}>
@@ -39,6 +41,7 @@ const SelectingInformation: React.FC<SelectingInformationProps> = ({
                     setDaysName={setDaysName}
                     timeName={timeName}
                     setTimeName={setTimeName}
+                    setInput={setInput}
                 />
             </div>
         </section>
