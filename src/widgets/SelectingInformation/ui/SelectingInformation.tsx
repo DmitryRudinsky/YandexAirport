@@ -5,7 +5,7 @@ import TopicNames from "@/shared/ui/TopicNames/TopicNames";
 import TopicSelecting from "@/shared/ui/TopicSelecting/TopicSelecting";
 import Input from "@/entities/Input/Input";
 
-type HeaderType = "Вылет" | "Прилёт" | "Задержки"
+type HeaderType = "Вылет" | "Прилёт" | "Пересадка"
 
 interface SelectingInformationProps {
     header: HeaderType;

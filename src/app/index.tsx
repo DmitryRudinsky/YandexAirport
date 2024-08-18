@@ -8,7 +8,7 @@ import "../shared/global_styles/_global.module.scss"
 import React from "react";
 import {DeparturePage} from "@/pages/DeparturePage";
 import {ArrivalsPage} from "@/pages/ArrivalsPage";
-import {DelayPage} from "@/pages/DelayPage";
+import {TransferPage} from "@/pages/TransferPage";
 import {QueryClient, QueryClientProvider} from "react-query";
 
 const root = document.getElementById("root");
@@ -31,8 +31,8 @@ const router = createBrowserRouter([
         element: <ArrivalsPage/>,
     },
     {
-        path: "/delay",
-        element: <DelayPage/>,
+        path: "/transfer",
+        element: <TransferPage/>,
     },
 ]);
 

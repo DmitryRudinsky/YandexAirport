@@ -1,0 +1,1 @@
+export {default as TransferTables} from "./ui/TransferTables"

@@ -24,3 +24,8 @@
     color: #ffcc00;
   }
 }
+
+.elem__trans{
+  font-size: calc(44 * 1px + (180 - 44) * (100vw - 320* 1px) / (2560 - 320));
+  padding: 100px 0;
+}

@@ -14,7 +14,7 @@ const MainPageTransitions: React.FC<MainPageTransitionsProps> = ({setHoverElem, 
         <div className={direction === "horizontal" ? classes.transitions__inner__horizontal : classes.transitions__inner__vertical}>
             <Transition direction={direction} keyWord="departure" setHoverElem={setHoverElem} mainString="Вылет" subString="Вылетающим и провожающим"/>
             <Transition direction={direction} keyWord="arrivals" setHoverElem={setHoverElem} mainString="Прилёт" subString="Прилетающим и встречающим"/>
-            <Transition direction={direction} keyWord="delay" setHoverElem={setHoverElem} mainString="Задержки" subString="Задерживающиеся рейсы"/>
+            <Transition direction={direction} keyWord="transfer" setHoverElem={setHoverElem} mainString="Пересадка" subString="Совершающим пересадку"/>
         </div>
     );
 };

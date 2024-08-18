@@ -1,1 +1,0 @@
-export {default as DelayPage} from "./ui/DelayPage"
