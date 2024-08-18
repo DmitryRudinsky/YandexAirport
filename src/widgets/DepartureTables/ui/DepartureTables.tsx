@@ -1,16 +1,15 @@
 import React from 'react';
-import * as classes from "./ArrivalTables.module.scss"
+import * as classes from "./DepartureTables.module.scss"
 import * as globalClasses from "@/shared/global_styles/_global.module.scss"
 import TableCell from "@/shared/ui/TableCell/TableCell";
-import {ArrivalInfo, axiosRequest} from "@/shared/interfaces/ArrivalInterface";
+import {DepartureInfo, axiosRequest} from "@/shared/interfaces/DepartureInterface";
 
 interface ArrivalTablesProps {
-    arrTableDataInfo: axiosRequest;
+    departureTableDataInfo: axiosRequest;
 }
 
-const ArrivalTables: React.FC<ArrivalTablesProps> = ({arrTableDataInfo}) => {
-    const arrivalData: ArrivalInfo[] = arrTableDataInfo.items;
-    console.log(arrivalData);
+const DepartureTables: React.FC<ArrivalTablesProps> = ({departureTableDataInfo}) => {
+    const arrivalData: DepartureInfo[] = departureTableDataInfo.items;
 
     return (
         <section className={classes.arrivalTables}>
@@ -23,9 +22,10 @@ const ArrivalTables: React.FC<ArrivalTablesProps> = ({arrTableDataInfo}) => {
                     let time;
                     if(data.t_at !== null) time = data.t_at.split("T")[1].slice(0, 5);
                     else time = data.t_st.split("T")[1].slice(0, 5);
-                    const city = data.mar1.city;
+                    const city = data.mar2.city;
+                    const gate_id = data.gate_id;
                     return (
-                        <TableCell gate_id={null} city={city} time={time} status={status} term={term} code={code} flt={flt} key={index}/>
+                        <TableCell gate_id={gate_id} city={city} time={time} status={status} term={term} code={code} flt={flt} key={index}/>
                     )
                 })}
             </div>
@@ -33,4 +33,4 @@ const ArrivalTables: React.FC<ArrivalTablesProps> = ({arrTableDataInfo}) => {
     );
 };
 
-export default ArrivalTables;
+export default DepartureTables;

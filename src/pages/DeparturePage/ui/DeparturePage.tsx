@@ -8,15 +8,16 @@ import {useQuery} from "react-query";
 import {Spin} from "antd";
 import {getDepartureInfo} from "@/pages/DeparturePage/func/getDepartureInfo";
 import {Footer} from "@/widgets/Footer";
+import {DepartureTables} from "@/widgets/DepartureTables";
 
 const DeparturePage: React.FC = () => {
 
     const {
-        data: arrTableData,
-        isLoading: arrTableIsLoading,
-        isError: arrTableIsError,
+        data: departureTableDataInfo,
+        isLoading: departureTableIsLoading,
+        isError: departureTableIsError,
         refetch
-    } = useQuery("arrTableData", () => getDepartureInfo(currentDate, currentInterval));
+    } = useQuery("departureTableData", () => getDepartureInfo(currentDate, currentInterval));
 
     const [today, todayFormat] = getDates();
     const [startInterval, endInterval] = getTimeInterval();
@@ -31,11 +32,11 @@ const DeparturePage: React.FC = () => {
         refetch().then(() => setIsRefetching(false));
     }, [currentDate, currentInterval, refetch]);
 
-    console.log(arrTableData);
+    console.log(departureTableDataInfo);
 
-    if (arrTableIsLoading || isRefetching) return <Spin fullscreen={true}/>;
-    else if (arrTableIsError) return <h1>Error</h1>;
-    else if (arrTableData !== undefined) {
+    if (departureTableIsLoading || isRefetching) return <Spin fullscreen={true}/>;
+    else if (departureTableIsError) return <h1>Error</h1>;
+    else if (departureTableDataInfo !== undefined) {
         return (
             <main className={classes.departurePage}>
                 <Header/>
@@ -47,6 +48,7 @@ const DeparturePage: React.FC = () => {
                                       timeName={timeName}
                                       setTimeName={setTimeName}
                 />
+                <DepartureTables departureTableDataInfo={departureTableDataInfo}/>
                 <Footer/>
             </main>
         );

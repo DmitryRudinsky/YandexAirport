@@ -1,0 +1,1 @@
+export {default as DepartureTables} from "./ui/DepartureTables"

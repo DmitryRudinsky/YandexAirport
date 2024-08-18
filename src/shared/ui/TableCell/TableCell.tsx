@@ -8,9 +8,10 @@ interface TableCellProps {
     status: string | null;
     time: string | null;
     city: string | null;
+    gate_id: string | null;
 }
 
-const TableCell: React.FC<TableCellProps> = ({flt, code, term, status, time, city}) => {
+const TableCell: React.FC<TableCellProps> = ({flt, code, term, status, time, city, gate_id}) => {
     return (
         <div className={classes.cell}>
             <div className={classes.leftInner}>
@@ -21,6 +22,7 @@ const TableCell: React.FC<TableCellProps> = ({flt, code, term, status, time, cit
                 <p className={classes.code}>{code}</p>
                 <p className={classes.flt}>{flt}</p>
                 <p className={classes.term}>{term}</p>
+                {gate_id !== null ? <p className={classes.gate_id}>{gate_id}</p> : <></>}
                 <h5 className={`${classes.status} ${status === "Отменён" || status === "Отменен" ? classes.cancel : ""}`}>{status}</h5>
             </div>
         </div>
