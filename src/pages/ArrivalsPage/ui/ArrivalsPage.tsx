@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import {useQuery} from "react-query";
-import { getArrivalInfo} from "@/pages/ArrivalsPage/func/getArrivalInfo";
+import {getArrivalInfo} from "@/pages/ArrivalsPage/func/getArrivalInfo";
 import {Spin} from "antd";
 import * as classes from "./ArrivalsPage.module.scss";
 import {Header} from "@/widgets/Header";
@@ -15,13 +15,15 @@ const ArrivalsPage: React.FC = () => {
 
 
     const [today, todayFormat] = getDates();
-    const [startInterval, endInterval] = getTimeInterval();
+    let [startInterval, endInterval] = getTimeInterval();
+    if (startInterval === "22:00" && endInterval === "00:00") endInterval = "24:00"
     const [daysName, setDaysName] = useState<string>(todayFormat);
     const [currentDate, setCurrentDate] = useState<string>(today);
     const [timeName, setTimeName] = useState<string>(`${startInterval} - ${endInterval}`);
     const [currentInterval, setCurrentInterval] = useState<string[]>([startInterval, endInterval]);
     const [isRefetching, setIsRefetching] = useState<boolean>(false);
     const [input, setInput] = useState<string>("");
+    console.log(startInterval, endInterval)
 
     const {
         data: arrTableDataInfo,
@@ -34,7 +36,6 @@ const ArrivalsPage: React.FC = () => {
         setIsRefetching(true);
         refetch().then(() => setIsRefetching(false));
     }, [currentDate, currentInterval, refetch]);
-
 
 
     if (arrTableIsLoading || isRefetching) return <Spin fullscreen={true}/>;

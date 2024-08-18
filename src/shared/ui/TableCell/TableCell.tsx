@@ -9,12 +9,14 @@ interface TableCellProps {
     time: string | null;
     city: string | null;
     gate_id: string | null;
+    delTime: string | null;
 }
 
-const TableCell: React.FC<TableCellProps> = ({flt, code, term, status, time, city, gate_id}) => {
+const TableCell: React.FC<TableCellProps> = ({delTime, flt, code, term, status, time, city, gate_id}) => {
     return (
         <div className={classes.cell}>
             <div className={classes.leftInner}>
+                <p className={classes.del__elem}>{delTime}</p>
                 <p className={classes.time}>{time}</p>
                 <h4 className={classes.arrivalCity}>{city}</h4>
             </div>

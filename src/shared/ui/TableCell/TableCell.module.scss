@@ -17,11 +17,20 @@
 .leftInner{
   display: flex;
   align-items: center;
+  position: relative;
 }
 
 .rightInner{
   display: flex;
   align-items: center;
+}
+
+.del__elem{
+  font-size: 18px;
+  position: absolute;
+  top: 0;
+  left: -65px;
+  text-decoration: line-through;
 }
 
 .time{

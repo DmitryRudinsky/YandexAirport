@@ -13,7 +13,8 @@ import {TransferTables} from "@/widgets/TransferTables";
 const TransferPage: React.FC = () => {
 
     const [today, todayFormat] = getDates();
-    const [startInterval, endInterval] = getTimeInterval();
+    let [startInterval, endInterval] = getTimeInterval();
+    if (startInterval === "22:00" && endInterval === "00:00") endInterval = "24:00"
     const [daysName, setDaysName] = useState<string>(todayFormat);
     const [currentDate, setCurrentDate] = useState<string>(today);
     const [timeName, setTimeName] = useState<string>(`${startInterval} - ${endInterval}`);

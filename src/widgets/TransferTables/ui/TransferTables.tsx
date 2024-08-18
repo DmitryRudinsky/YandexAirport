@@ -20,13 +20,21 @@ const TransferTables: React.FC<ArrivalTablesProps> = ({transferTableDataInfo, in
                     const code = data.co.code;
                     const term = data.term;
                     const status = data.vip_status_rus;
+
                     let time;
-                    if(data.t_at !== null) time = data.t_at.split("T")[1].slice(0, 5);
-                    else time = data.t_st.split("T")[1].slice(0, 5);
+                    let delTime = null;
+                    if (data.t_otpr !== null) {
+                        time = data.t_otpr.split("T")[1].slice(0, 5);
+                        delTime = data.t_st.split("T")[1].slice(0, 5);
+                    } else if (data.t_at !== null) {
+                        time = data.t_at.split("T")[1].slice(0, 5);
+                        delTime = data.t_st.split("T")[1].slice(0, 5);
+                    } else time = data.t_st.split("T")[1].slice(0, 5);
+
                     const city = data.mar2.city !== "Москва" ? data.mar2.city : data.mar1.city;
                     if (input === "" || flt.includes(input) || city.includes(input)) {
                         return (
-                            <TableCell gate_id={null} city={city} time={time} status={status} term={term} code={code}
+                            <TableCell delTime={delTime} gate_id={null} city={city} time={time} status={status} term={term} code={code}
                                        flt={flt} key={index}/>
                         )
                     }
