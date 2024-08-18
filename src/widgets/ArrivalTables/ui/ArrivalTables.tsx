@@ -11,7 +11,6 @@ interface ArrivalTablesProps {
 
 const ArrivalTables: React.FC<ArrivalTablesProps> = ({arrTableDataInfo, input}) => {
     const arrivalData: ArrivalInfo[] = arrTableDataInfo.items;
-    console.log(arrivalData);
 
     return (
         <section className={classes.arrivalTables}>

@@ -20,8 +20,10 @@ const TopicNames: React.FC<TopicNameProps> = ({header}) => {
                 <Link to={"/"}>
                     <li className={classes.elem}>Главная</li>
                 </Link>
+                <li className={classes.slash}>/</li>
                 <li className={classes.elem}>{header}</li>
-                <li style={{color: "#ffcc00"}} className={classes.elem}>{tableNames[header]}</li>
+                <li className={classes.slash}>/</li>
+                <li style={{color: "#000000"}} className={classes.elem}>{tableNames[header]}</li>
             </ul>
         </div>
     );

@@ -35,7 +35,6 @@ const DeparturePage: React.FC = () => {
         refetch().then(() => setIsRefetching(false));
     }, [currentDate, currentInterval, refetch]);
 
-    console.log(departureTableDataInfo);
 
     if (departureTableIsLoading || isRefetching) return <Spin fullscreen={true}/>;
     else if (departureTableIsError) return <h1>Error</h1>;

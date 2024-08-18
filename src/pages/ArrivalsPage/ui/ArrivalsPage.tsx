@@ -23,7 +23,6 @@ const ArrivalsPage: React.FC = () => {
     const [currentInterval, setCurrentInterval] = useState<string[]>([startInterval, endInterval]);
     const [isRefetching, setIsRefetching] = useState<boolean>(false);
     const [input, setInput] = useState<string>("");
-    console.log(startInterval, endInterval)
 
     const {
         data: arrTableDataInfo,

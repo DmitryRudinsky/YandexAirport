@@ -31,7 +31,6 @@ const SelectingInformation: React.FC<SelectingInformationProps> = ({
     return (
         <section className={classes.selection}>
             <div className={globalClasses.container}>
-                <h4 className={classes.h4__title}>{header}</h4>
                 <TopicNames header={header}/>
                 <TopicSelecting header={header}/>
                 <Input

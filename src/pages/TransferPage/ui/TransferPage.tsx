@@ -36,7 +36,6 @@ const TransferPage: React.FC = () => {
         refetch().then(() => setIsRefetching(false));
     }, [currentDate, currentInterval, refetch]);
 
-    console.log(transferTableDataInfo);
 
     if (transferTableIsLoading || isRefetching) return <Spin fullscreen={true}/>;
     else if (transferTableIsError) return <h1>Error</h1>;
