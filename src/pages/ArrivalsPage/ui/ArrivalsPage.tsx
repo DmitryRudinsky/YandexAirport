@@ -7,6 +7,8 @@ import {Header} from "@/widgets/Header";
 import {SelectingInformation} from "@/widgets/SelectingInformation";
 import {getDates} from "@/shared/functions/getDate";
 import {getTimeInterval} from "@/shared/functions/getTimeInterval";
+import {ArrivalTables} from "@/widgets/ArrivalTables";
+import {Footer} from "@/widgets/Footer";
 
 
 const ArrivalsPage: React.FC = () => {
@@ -20,10 +22,8 @@ const ArrivalsPage: React.FC = () => {
     const [currentInterval, setCurrentInterval] = useState<string[]>([startInterval, endInterval]);
     const [isRefetching, setIsRefetching] = useState<boolean>(false);
 
-    console.log(currentDate, currentInterval);
-
     const {
-        data: arrTableData,
+        data: arrTableDataInfo,
         isLoading: arrTableIsLoading,
         isError: arrTableIsError,
         refetch
@@ -35,11 +35,10 @@ const ArrivalsPage: React.FC = () => {
     }, [currentDate, currentInterval, refetch]);
 
 
-    console.log(arrTableData);
 
     if (arrTableIsLoading || isRefetching) return <Spin fullscreen={true}/>;
     else if (arrTableIsError) return <h1>Error</h1>;
-    else if (arrTableData !== undefined) {
+    else if (arrTableDataInfo !== undefined) {
         return (
             <main className={classes.arrivalsPage}>
                 <Header/>
@@ -51,6 +50,10 @@ const ArrivalsPage: React.FC = () => {
                                       timeName={timeName}
                                       setTimeName={setTimeName}
                 />
+                <ArrivalTables
+                    arrTableDataInfo={arrTableDataInfo}
+                />
+                <Footer/>
             </main>
         );
     }

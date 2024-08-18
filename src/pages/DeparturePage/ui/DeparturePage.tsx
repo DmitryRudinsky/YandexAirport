@@ -7,6 +7,7 @@ import {getTimeInterval} from "@/shared/functions/getTimeInterval";
 import {useQuery} from "react-query";
 import {Spin} from "antd";
 import {getDepartureInfo} from "@/pages/DeparturePage/func/getDepartureInfo";
+import {Footer} from "@/widgets/Footer";
 
 const DeparturePage: React.FC = () => {
 
@@ -46,6 +47,7 @@ const DeparturePage: React.FC = () => {
                                       timeName={timeName}
                                       setTimeName={setTimeName}
                 />
+                <Footer/>
             </main>
         );
     }

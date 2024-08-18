@@ -1,0 +1,1 @@
+export {default as ArrivalTables} from "./ui/ArrivalTables"

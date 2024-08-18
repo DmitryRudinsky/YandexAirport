@@ -2,7 +2,7 @@ import React from 'react';
 import * as classes from "./MainPageFooter.module.scss";
 import * as globalClasses from "@/shared/global_styles/_global.module.scss"
 
-const MainPageFooter: React.FC = () => {
+const Footer: React.FC = () => {
     return (
         <footer className={classes.mainPage__footer}>
             <div className={globalClasses.container}>
@@ -27,4 +27,4 @@ const MainPageFooter: React.FC = () => {
     );
 };
 
-export default MainPageFooter;
+export default Footer;

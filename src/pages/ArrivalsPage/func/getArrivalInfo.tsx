@@ -1,4 +1,5 @@
 import axios from "axios";
+import {axiosRequest} from "@/shared/interfaces/ArrivalInterface";
 
 export async function getArrivalInfo(currentDate: string, currentInterval: string[]) {
     const config = {
@@ -7,7 +8,7 @@ export async function getArrivalInfo(currentDate: string, currentInterval: strin
     };
 
     try {
-        const ArrData = await axios.request<any>(config);
+        const ArrData = await axios.request<axiosRequest>(config);
         return ArrData.data;
     } catch (error) {
         console.error("Ошибка при получении данных:", error);

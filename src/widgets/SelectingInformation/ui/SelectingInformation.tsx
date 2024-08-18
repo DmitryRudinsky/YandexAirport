@@ -27,7 +27,7 @@ const SelectingInformation: React.FC<SelectingInformationProps> = ({
                                                                        setTimeName
                                                                    }) => {
     return (
-        <section>
+        <section className={classes.selection}>
             <div className={globalClasses.container}>
                 <h4 className={classes.h4__title}>{header}</h4>
                 <TopicNames header={header}/>
