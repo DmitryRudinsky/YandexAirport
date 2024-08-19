@@ -1,0 +1,1 @@
+export {default as DepartingOVZInfoPage} from "./ui/DepartingOVZInfoPage"

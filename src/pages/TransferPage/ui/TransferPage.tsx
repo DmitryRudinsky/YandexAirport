@@ -46,7 +46,7 @@ const TransferPage: React.FC = () => {
                 <SelectingInformation timeName={timeName} setTimeName={setTimeName} daysName={daysName}
                                       setDaysName={setDaysName} setCurrentDate={setCurrentDate}
                                       setCurrentInterval={setCurrentInterval} header={"Пересадка"}
-                                      setInput={setInput}/>
+                                      setInput={setInput} needInput={true}/>
                 <TransferTables input={input} transferTableDataInfo={transferTableDataInfo}/>
                 <Footer/>
             </main>

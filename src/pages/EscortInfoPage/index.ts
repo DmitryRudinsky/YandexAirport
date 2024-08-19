@@ -1,0 +1,1 @@
+export {default as EscortInfoPage} from "./ui/EscortInfoPage"

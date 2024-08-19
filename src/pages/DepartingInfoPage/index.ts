@@ -1,0 +1,1 @@
+export {default as DepartingInfoPage} from "./ui/DepartingInfoPage"

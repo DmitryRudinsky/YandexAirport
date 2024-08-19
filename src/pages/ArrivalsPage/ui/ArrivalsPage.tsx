@@ -51,6 +51,7 @@ const ArrivalsPage: React.FC = () => {
                                       timeName={timeName}
                                       setTimeName={setTimeName}
                                       setInput={setInput}
+                                      needInput={true}
                 />
                 <ArrivalTables
                     input={input}

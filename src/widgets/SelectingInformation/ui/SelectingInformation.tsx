@@ -5,17 +5,18 @@ import TopicNames from "@/shared/ui/TopicNames/TopicNames";
 import TopicSelecting from "@/shared/ui/TopicSelecting/TopicSelecting";
 import Input from "@/entities/Input/Input";
 
-type HeaderType = "Вылет" | "Прилёт" | "Пересадка"
+type HeaderType = "Вылет" | "Прилёт" | "Пересадка" | "Вылетающим" | "Провожающим" | "Вылетающим пассажирам с ОВЗ";
 
 interface SelectingInformationProps {
     header: HeaderType;
-    setCurrentDate: React.Dispatch<React.SetStateAction<string>>;
-    daysName: string;
-    setDaysName: React.Dispatch<React.SetStateAction<string>>;
-    setCurrentInterval: React.Dispatch<React.SetStateAction<string[]>>;
-    timeName: string;
-    setTimeName: React.Dispatch<React.SetStateAction<string>>;
-    setInput: React.Dispatch<React.SetStateAction<string>>;
+    setCurrentDate: React.Dispatch<React.SetStateAction<string>> | null;
+    daysName: string | null;
+    setDaysName: React.Dispatch<React.SetStateAction<string>> | null;
+    setCurrentInterval: React.Dispatch<React.SetStateAction<string[]>> | null;
+    timeName: string | null;
+    setTimeName: React.Dispatch<React.SetStateAction<string>> | null;
+    setInput: React.Dispatch<React.SetStateAction<string>> | null;
+    needInput: boolean;
 }
 
 const SelectingInformation: React.FC<SelectingInformationProps> = ({
@@ -26,22 +27,28 @@ const SelectingInformation: React.FC<SelectingInformationProps> = ({
                                                                        setCurrentInterval,
                                                                        timeName,
                                                                        setTimeName,
-                                                                       setInput
+                                                                       setInput,
+                                                                       needInput
                                                                    }) => {
     return (
         <section className={classes.selection}>
             <div className={globalClasses.container}>
                 <TopicNames header={header}/>
                 <TopicSelecting header={header}/>
-                <Input
-                    setCurrentInterval={setCurrentInterval}
-                    setCurrentDate={setCurrentDate}
-                    daysName={daysName}
-                    setDaysName={setDaysName}
-                    timeName={timeName}
-                    setTimeName={setTimeName}
-                    setInput={setInput}
-                />
+                {needInput
+                    ?
+                    <Input
+                        setCurrentInterval={setCurrentInterval}
+                        setCurrentDate={setCurrentDate}
+                        daysName={daysName}
+                        setDaysName={setDaysName}
+                        timeName={timeName}
+                        setTimeName={setTimeName}
+                        setInput={setInput}
+                    />
+                    :
+                    <></>
+                }
             </div>
         </section>
     );

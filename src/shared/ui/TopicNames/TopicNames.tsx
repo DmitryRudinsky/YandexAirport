@@ -2,7 +2,7 @@ import React from 'react';
 import * as classes from "./TopicNames.module.scss"
 import {Link} from "react-router-dom";
 
-type HeaderType = "Вылет" | "Прилёт" | "Пересадка";
+type HeaderType = "Вылет" | "Прилёт" | "Пересадка" | "Вылетающим" | "Провожающим" | "Вылетающим пассажирам с ОВЗ";
 
 interface TopicNameProps {
     header: HeaderType;
@@ -12,7 +12,10 @@ const TopicNames: React.FC<TopicNameProps> = ({header}) => {
     const tableNames = {
         "Вылет": "Табло вылета",
         "Прилёт": "Табло прилёта",
-        "Пересадка": "Выбор рейса прилёта"
+        "Пересадка": "Выбор рейса прилёта",
+        "Вылетающим": "Вылетающим",
+        "Провожающим": "Провожающим",
+        "Вылетающим пассажирам с ОВЗ": "Вылетающим пассажирам с ОВЗ",
     }
     return (
         <div className={classes.topic__names}>

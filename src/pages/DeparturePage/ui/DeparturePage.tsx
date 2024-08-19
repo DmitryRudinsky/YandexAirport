@@ -50,6 +50,7 @@ const DeparturePage: React.FC = () => {
                                       timeName={timeName}
                                       setTimeName={setTimeName}
                                       setInput={setInput}
+                                      needInput={true}
                 />
                 <DepartureTables input={input} departureTableDataInfo={departureTableDataInfo}/>
                 <Footer/>

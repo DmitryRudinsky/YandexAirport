@@ -10,6 +10,9 @@ import {DeparturePage} from "@/pages/DeparturePage";
 import {ArrivalsPage} from "@/pages/ArrivalsPage";
 import {TransferPage} from "@/pages/TransferPage";
 import {QueryClient, QueryClientProvider} from "react-query";
+import {DepartingInfoPage} from "@/pages/DepartingInfoPage";
+import {EscortInfoPage} from "@/pages/EscortInfoPage";
+import {DepartingOVZInfoPage} from "@/pages/DepartingOVZInfoPage";
 
 const root = document.getElementById("root");
 
@@ -33,6 +36,30 @@ const router = createBrowserRouter([
     {
         path: "/transfer",
         element: <TransferPage/>,
+    },
+    {
+        path: "/departure/d-for-departing-passengers",
+        element: <DepartingInfoPage/>
+    },
+    {
+        path: "/departure/d-provozhayushchim",
+        element: <EscortInfoPage/>
+    },
+    {
+        path: "/departure/d-passazhiram-s-ovz",
+        element: <DepartingOVZInfoPage/>
+    },
+    {
+        path: "/arrival/a-vyletayushchim",
+        element: <h1>3266</h1>
+    },
+    {
+        path: "/arrival/a-provozhayushchim",
+        element: <h1>gyhg</h1>
+    },
+    {
+        path: "/arrival/a-passazhiram-s-ovz",
+        element: <h1>ju675</h1>
     },
 ]);
 
