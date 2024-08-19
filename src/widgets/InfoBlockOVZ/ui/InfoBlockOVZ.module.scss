@@ -1,0 +1,50 @@
+.section{
+  border-top: 1px black;
+  padding: 100px 0;
+}
+
+.line{
+  width: 100%;
+  height: 3px;
+  background-color: black;
+  margin-bottom: 75px;
+}
+
+.main__text{
+  line-height: 50px;
+  font-size: 32px;
+  max-width: 900px;
+  margin-bottom: 50px;
+}
+
+.span{
+  font-weight: 900;
+  font-size: inherit;
+}
+
+.small__text{
+  font-size: 22px;
+  max-width: 750px;
+  margin-bottom: 100px;
+}
+
+.title{
+  font-size: 44px;
+  font-weight: 900;
+  margin-bottom: 35px;
+}
+
+.list{
+  margin-bottom: 50px;
+}
+
+.list__span{
+  display: inline;
+  font-size: 40px;
+  padding-right: 10px;
+}
+
+.list__elem{
+  font-size: 22px;
+  margin-bottom: 10px;
+}
