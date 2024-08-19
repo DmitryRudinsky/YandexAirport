@@ -13,6 +13,9 @@ import {QueryClient, QueryClientProvider} from "react-query";
 import {DepartingInfoPage} from "@/pages/DepartingInfoPage";
 import {EscortInfoPage} from "@/pages/EscortInfoPage";
 import {DepartingOVZInfoPage} from "@/pages/DepartingOVZInfoPage";
+import {ArrivingInfoPage} from "@/pages/ArrivingInfoPage";
+import {GreeterInfoPage} from "@/pages/GreeterInfoPage";
+import {ArrivingOVZInfoPage} from "@/pages/ArrivingOVZInfoPage";
 
 const root = document.getElementById("root");
 
@@ -51,15 +54,15 @@ const router = createBrowserRouter([
     },
     {
         path: "/arrival/a-vyletayushchim",
-        element: <h1>3266</h1>
+        element: <ArrivingInfoPage/>
     },
     {
         path: "/arrival/a-provozhayushchim",
-        element: <h1>gyhg</h1>
+        element: <GreeterInfoPage/>
     },
     {
         path: "/arrival/a-passazhiram-s-ovz",
-        element: <h1>ju675</h1>
+        element: <ArrivingOVZInfoPage/>
     },
 ]);
 

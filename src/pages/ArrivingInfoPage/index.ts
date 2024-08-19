@@ -1,0 +1,1 @@
+export {default as ArrivingInfoPage} from "./ui/ArrivingInfoPage"
