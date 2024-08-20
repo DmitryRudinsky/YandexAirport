@@ -2,8 +2,8 @@ import React from 'react';
 import { animated, useTransition } from 'react-spring';
 import MainBackGroundVideo from "@/entities/backGroundVideo/ui/MainBackGroundVideo";
 import ArrivalsBackGroundVideo from "@/entities/backGroundVideo/ui/ArrivalsBackGroundVideo";
-import DepatureBackGroundVideo from "@/entities/backGroundVideo/ui/DepatureBackGroundVideo";
-import DelayBackGroundVideo from "@/entities/backGroundVideo/ui/DelayBackGroundVideo";
+import DepartureBackGroundVideo from "@/entities/backGroundVideo/ui/DepartureBackGroundVideo";
+import TransferBackGroundVideo from "@/entities/backGroundVideo/ui/TransferBackGroundVideo";
 
 interface BackgroundChangingProps {
     hoverElem: string;
@@ -12,9 +12,9 @@ interface BackgroundChangingProps {
 const BackgroundChanging: React.FC<BackgroundChangingProps> = ({ hoverElem }) => {
     const componentMap: { [key: string]: React.FC } = {
         main: MainBackGroundVideo,
-        departure: DepatureBackGroundVideo,
+        departure: DepartureBackGroundVideo,
         arrivals: ArrivalsBackGroundVideo,
-        delay: DelayBackGroundVideo
+        transfer: TransferBackGroundVideo
     };
     const SelectedComponent = componentMap[hoverElem] || null;
     const transitions = useTransition(SelectedComponent, {

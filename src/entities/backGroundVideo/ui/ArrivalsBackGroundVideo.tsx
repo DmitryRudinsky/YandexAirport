@@ -1,6 +1,6 @@
 import React from 'react';
 import * as classes from "./backgroundVideo.module.scss";
-import ArrivalsVideoBG from "@/entities/backGroundVideo/assets/depature.mp4";
+import ArrivalsVideoBG from "@/entities/backGroundVideo/assets/arrivals.mp4";
 
 const MainBackGroundVideo: React.FC = () => {
     return (

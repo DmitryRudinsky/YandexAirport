@@ -11,7 +11,7 @@ const HeaderTitle: React.FC<HeaderTitleProps> = ({hoverElem}) => {
         main: ["Яндекс Эйр"],
         departure: ["Вылет"],
         arrivals: ["Прилёт"],
-        delay: ["Задержки"]
+        transfer: ["Пересадка"]
     };
 
     const title = obj[hoverElem as keyof typeof obj];
