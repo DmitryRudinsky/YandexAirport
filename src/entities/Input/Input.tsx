@@ -27,6 +27,7 @@ const Input: React.FC<InputProps> = ({
 
     const [dateFormat1, dateFormat2, dateFormatYesterday, dateFormatTomorrow, dateFormatYesterdayFull, dateFormatTomorrowFull] = getDates();
     const [active, setActive] = useState<boolean>(false);
+    const [inputValue, setInputValue] = useState<string>("");
 
 
     const setActiveHandle = () => {
@@ -35,6 +36,8 @@ const Input: React.FC<InputProps> = ({
 
     const setUnActiveHandle = () => {
         setActive(false);
+        setInputValue("");
+        setInput("");  // Также очищаем состояние в родительском компоненте
     }
 
     //@ts-ignore
@@ -49,7 +52,11 @@ const Input: React.FC<InputProps> = ({
 
     return (
         <div className={`${classes.searchBar} ${active ? classes.searchBar__active : ""}`}>
-            <input onChange={(e) => setInput(e.target.value)} className={`${classes.searchBar__input}`} onClick={setActiveHandle} type="text"
+            <input onChange={(e) => {
+                setInputValue(e.target.value);
+                setInput(e.target.value);
+            }}
+                   value={inputValue} className={`${classes.searchBar__input}`} onClick={setActiveHandle} type="text"
                    placeholder="Поиск по номеру рейса, городу и авиакомпании"/>
             <div className={classes.options}>
                 {

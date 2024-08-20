@@ -59,8 +59,8 @@ const TopicSelecting: React.FC<TopicSelectingProps> = ({header}) => {
                         <Link to={links[2]}>
                             <li className={`${classes.elem} ${header === "Провожающим" || header === "Встречающим" ? classes.elem__active : ""}`}>{elems[2]}</li>
                         </Link>
-                        <Link to={links[3]}>
-                            <li className={`${classes.elem} ${header === "Вылетающим пассажирам с ОВЗ" || header === "Прилетающим пассажирам с ОВЗ" ? classes.elem__active : ""} ${classes.last__elem}`}>Пассажирам с ОВЗ</li>
+                        <Link className={classes.last__elem} to={links[3]}>
+                            <li className={`${classes.elem} ${header === "Вылетающим пассажирам с ОВЗ" || header === "Прилетающим пассажирам с ОВЗ" ? classes.elem__active : ""}`}>Пассажирам с ОВЗ</li>
                         </Link>
                     </ul>
             }
