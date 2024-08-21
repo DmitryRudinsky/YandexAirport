@@ -18,11 +18,12 @@ const BackgroundChanging: React.FC<BackgroundChangingProps> = ({ hoverElem }) =>
     };
     const SelectedComponent = componentMap[hoverElem] || null;
     const transitions = useTransition(SelectedComponent, {
-        from: { opacity: 0 },
-        enter: { opacity: 1 },
-        leave: { opacity: 0 },
-        config: { duration: 500 } // Длительность анимации в миллисекундах
+        from: { filter: 'brightness(0%)' },
+        enter: { filter: 'brightness(100%)' },
+        leave: { filter: 'brightness(0%)' },
+        config: { duration: 500 }
     });
+
     return (
         <div style={{ position: 'relative', width: '100%', height: '100%' }}>
             {transitions((styles, item) =>
