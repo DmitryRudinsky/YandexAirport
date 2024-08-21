@@ -6,7 +6,7 @@ const MainBackGroundVideo: React.FC = () => {
     return (
         <div className={classes.fullscreenBg}>
             <div className={classes.overlay}></div>
-            <video src={DepartureVideoBG} className={classes.fullscreenBg__video} autoPlay loop muted/>
+            <video src={DepartureVideoBG} className={classes.fullscreenBg__video__brightness} autoPlay loop muted/>
         </div>
     );
 };
