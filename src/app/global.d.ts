@@ -1,3 +1,4 @@
+
 declare module '*.module.scss' {
     interface IClassNames {
         [className: string]: string
@@ -5,6 +6,14 @@ declare module '*.module.scss' {
     const classNames: IClassNames;
     export = classNames;
 }
+
+// @ts-ignore
+declare global {
+    interface Window {
+        __REACT_QUERY_STATE__?: any;
+    }
+}
+
 
 declare module "*.mp4";
 declare module "*.png";

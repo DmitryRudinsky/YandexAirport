@@ -1,21 +1,21 @@
-import {createRoot} from "react-dom/client";
-import {MainPage} from "@/pages/MainPage";
+import {createRoot, hydrateRoot} from "react-dom/client";
+import { MainPage } from "@/pages/MainPage";
 import {
     createBrowserRouter,
     RouterProvider,
 } from "react-router-dom";
-import "../shared/global_styles/_global.module.scss"
+import "../shared/global_styles/_global.module.scss";
 import React from "react";
-import {DeparturePage} from "@/pages/DeparturePage";
-import {ArrivalsPage} from "@/pages/ArrivalsPage";
-import {TransferPage} from "@/pages/TransferPage";
-import {QueryClient, QueryClientProvider} from "react-query";
-import {DepartingInfoPage} from "@/pages/DepartingInfoPage";
-import {EscortInfoPage} from "@/pages/EscortInfoPage";
-import {DepartingOVZInfoPage} from "@/pages/DepartingOVZInfoPage";
-import {ArrivingInfoPage} from "@/pages/ArrivingInfoPage";
-import {GreeterInfoPage} from "@/pages/GreeterInfoPage";
-import {ArrivingOVZInfoPage} from "@/pages/ArrivingOVZInfoPage";
+import { DeparturePage } from "@/pages/DeparturePage";
+import { ArrivalsPage } from "@/pages/ArrivalsPage";
+import { TransferPage } from "@/pages/TransferPage";
+import { QueryClient, QueryClientProvider, Hydrate } from "react-query";
+import { DepartingInfoPage } from "@/pages/DepartingInfoPage";
+import { EscortInfoPage } from "@/pages/EscortInfoPage";
+import { DepartingOVZInfoPage } from "@/pages/DepartingOVZInfoPage";
+import { ArrivingInfoPage } from "@/pages/ArrivingInfoPage";
+import { GreeterInfoPage } from "@/pages/GreeterInfoPage";
+import { ArrivingOVZInfoPage } from "@/pages/ArrivingOVZInfoPage";
 
 const root = document.getElementById("root");
 
@@ -67,6 +67,17 @@ const router = createBrowserRouter([
 ]);
 
 const queryClient = new QueryClient();
+
+// hydrateRoot(
+//     root,
+//     <QueryClientProvider client={queryClient}>
+//         <React.StrictMode>
+//             <Hydrate>
+//                 <RouterProvider router={router} />
+//             </Hydrate>
+//         </React.StrictMode>
+//     </QueryClientProvider>
+// );
 
 const container = createRoot(root);
 container.render(
